@@ -1,6 +1,6 @@
 {
-  "root": "apps/nx-vercel-test",
-  "sourceRoot": "apps/nx-vercel-test/src",
+  "root": "apps/nx-blank-page",
+  "sourceRoot": "apps/nx-blank-page/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,18 +9,18 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/nx-vercel-test",
-        "index": "apps/nx-vercel-test/src/public/index.html",
+        "outputPath": "dist/apps/nx-blank-page",
+        "index": "apps/nx-blank-page/src/public/index.html",
         "baseHref": "/",
         "sourceMap": false,
-        "main": "apps/nx-vercel-test/src/index.tsx",
-        "polyfills": "apps/nx-vercel-test/src/polyfills.ts",
-        "tsConfig": "apps/nx-vercel-test/tsconfig.app.json",
+        "main": "apps/nx-blank-page/src/index.tsx",
+        "polyfills": "apps/nx-blank-page/src/polyfills.ts",
+        "tsConfig": "apps/nx-blank-page/tsconfig.app.json",
         "assets": [
-          "apps/nx-vercel-test/src/public",
-          "apps/nx-vercel-test/src/assets"
+          "apps/nx-blank-page/src/public",
+          "apps/nx-blank-page/src/assets"
         ],
-        "styles": ["apps/nx-vercel-test/src/index.css"],
+        "styles": ["apps/nx-blank-page/src/index.css"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -28,8 +28,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/nx-vercel-test/src/environments/environment.ts",
-              "with": "apps/nx-vercel-test/src/environments/environment.prod.ts"
+              "replace": "apps/nx-blank-page/src/environments/environment.ts",
+              "with": "apps/nx-blank-page/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -41,8 +41,8 @@
         "development": {
           "fileReplacements": [
             {
-              "replace": "apps/nx-vercel-test/src/environments/environment.ts",
-              "with": "apps/nx-vercel-test/src/environments/environment.prod.ts"
+              "replace": "apps/nx-blank-page/src/environments/environment.ts",
+              "with": "apps/nx-blank-page/src/environments/environment.prod.ts"
             }
           ],
           "optimization": false,
@@ -56,13 +56,13 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
-        "buildTarget": "nx-vercel-test:build:development",
+        "buildTarget": "nx-blank-page:build:development",
         "hmr": true,
         "port": 3000
       },
       "configurations": {
         "production": {
-          "buildTarget": "nx-vercel-test:build:production",
+          "buildTarget": "nx-blank-page:build:production",
           "hmr": false,
           "sourceMap": false
         }
@@ -72,14 +72,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/nx-vercel-test/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/nx-blank-page/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/nx-vercel-test"],
+      "outputs": ["coverage/apps/nx-blank-page"],
       "options": {
-        "jestConfig": "apps/nx-vercel-test/jest.config.js",
+        "jestConfig": "apps/nx-blank-page/jest.config.js",
         "passWithNoTests": true
       }
     }
