@@ -18,7 +18,8 @@
         "tsConfig": "apps/nx-blank-page/tsconfig.app.json",
         "assets": [
           "apps/nx-blank-page/src/public",
-          "apps/nx-blank-page/src/assets"
+          "apps/nx-blank-page/src/assets",
+          "apps/nx-blank-page/src/service-worker.ts"
         ],
         "styles": ["apps/nx-blank-page/src/index.css"],
         "scripts": [],
