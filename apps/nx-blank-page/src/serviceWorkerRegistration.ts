@@ -29,19 +29,19 @@ export function register(config?: Config) {
   if (
     process.env.NODE_ENV === 'production' &&
     'serviceWorker' in navigator &&
-    process.env.NX_PUBLIC_URL //! Added to prevent this to be undefined
+    process.env.PUBLIC_URL
   ) {
     // The URL constructor is available in all browsers that support SW.
-    const publicUrl = new URL(process.env.NX_PUBLIC_URL, window.location.href);
+    const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
     if (publicUrl.origin !== window.location.origin) {
-      // Our service worker won't work if NX_PUBLIC_URL is on a different origin
+      // Our service worker won't work if PUBLIC_URL is on a different origin
       // from what our page is served on. This might happen if a CDN is used to
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
     }
 
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.NX_PUBLIC_URL}/service-worker.js`;
+      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
@@ -69,11 +69,9 @@ function registerValidSW(swUrl: string, config?: Config) {
     .then((registration) => {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
-
         if (installingWorker == null) {
           return;
         }
-
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
